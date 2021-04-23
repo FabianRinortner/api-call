@@ -5,7 +5,7 @@ import {select, Store} from '@ngrx/store';
 import {AppState} from '../app.state';
 import {categories, isCategoriesLoading, isCategoriesLoadingFailed} from './selectors/categories.selector';
 import {filter} from 'rxjs/operators';
-import {ResetCategories} from './actions/categories.action';
+import {LoadCategoriesAction, ResetCategories} from './actions/categories.action';
 
 @Component({
   selector: 'app-categories',
@@ -24,6 +24,8 @@ export class CategoriesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.store.dispatch(new LoadCategoriesAction());
+
     this.isLoading$ = this.store.pipe(select(isCategoriesLoading));
     this.isLoadingFailed$ = this.store.pipe(select(isCategoriesLoadingFailed));
     this.categoriesSubscription = this.store.pipe(select(categories))
@@ -33,7 +35,6 @@ export class CategoriesComponent implements OnInit, OnDestroy {
 
   initCategoriesFromStore(next: CategoriesModel) {
     this.categoriesModel = next;
-    console.log(next);
   }
 
   ngOnDestroy(): void {

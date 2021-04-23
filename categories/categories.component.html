@@ -7,7 +7,7 @@
     <div>Fehler beim Laden der Daten.</div>
   </div>
 
-  <div *ngFor="let contact of categoriesModel.categories">
+  <div *ngFor="let contact of categoriesModel?.categories">
     <div>{{contact?.idCategory}}</div>
     <div>{{contact?.strCategory}}</div>
     <div>{{contact?.strCategoryThumb}}</div>

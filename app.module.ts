@@ -20,7 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      categories: categoriesReducer,
+      categoriesState: categoriesReducer,
     }),
     EffectsModule.forRoot([
       CategoriesEffect

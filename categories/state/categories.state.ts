@@ -9,22 +9,20 @@ export class CategoriesState {
 export const INITIAL_CATEGORIES_STATE: CategoriesState = {
 
   // Data to create an initial state
-  categoriesModel: {
-    categories: [
-      {
-        idCategory: 1,
-        strCategory: 'Beef',
-        strCategoryThumb: 'beef.png',
-        strCategoryDescription: ' Beef is a nutrients.'
-      },
-      {
-        idCategory: 2,
-        strCategory: 'Beef',
-        strCategoryThumb: 'beef.png',
-        strCategoryDescription: ' Beef is a nutrients.'
-      }
-    ]
-  }
-
+  // categoriesModel: {
+  //   categoriesState: [
+  //     {
+  //       idCategory: 1,
+  //       strCategory: 'Beef',
+  //       strCategoryThumb: 'beef.png',
+  //       strCategoryDescription: ' Beef is a nutrients.'
+  //     },
+  //     {
+  //       idCategory: 2,
+  //       strCategory: 'Beef',
+  //       strCategoryThumb: 'beef.png',
+  //       strCategoryDescription: ' Beef is a nutrients.'
+  //     }
+  //     ]
 };
 

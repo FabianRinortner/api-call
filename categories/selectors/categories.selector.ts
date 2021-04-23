@@ -3,7 +3,7 @@ import {createSelector} from '@ngrx/store';
 import {CategoriesState} from '../state/categories.state';
 
 
-export const selectCategories = (state: AppState) => state.categories;
+export const selectCategories = (state: AppState) => state.categoriesState;
 
 export const categories =
   createSelector(selectCategories, (state: CategoriesState) => state.categoriesModel);

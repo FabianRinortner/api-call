@@ -15,7 +15,7 @@ export function categoriesReducer(state: CategoriesState = INITIAL_CATEGORIES_ST
       return {...state, isLoadingFailed: true, isLoading: false};
     }
     case CategoriesActionTypes.RESET_CATEGORIES: {
-      return {...state, categoriesModel: undefined};
+      return INITIAL_CATEGORIES_STATE;
     }
     default: {
       return state;

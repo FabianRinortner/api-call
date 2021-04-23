@@ -22,9 +22,9 @@ export class CategoriesEffect {
   categories$: Observable<Action> = this.actions$
     .pipe(ofType(CategoriesActionTypes.LOAD_CATEGORIES))
     .pipe(switchMap((action: LoadCategoriesAction) => {
-      const url = `.api/url`;
+      const url = `https://www.themealdb.com/api/json/v1/1/categories.php`;
 
-      return this.httpClient.get(url)
+      return this.httpClient.get<CategoriesModel>(url)
         .pipe(map((data: CategoriesModel) => new LoadCategoriesSuccessAction(data)))
         .pipe(catchError(() => of(new LoadCategoriesErrorAction())));
     }));
