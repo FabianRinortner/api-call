@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div *ngIf="(isLoading$ | async) === true">
+    <span class="spinner">Loading...</span>
+  </div>
+
+  <div *ngIf="(isLoadingFailed$ | async) === true && (isLoading$ | async) === false">
+    <div>Fehler beim Laden der Daten.</div>
+  </div>
+
+  <div *ngFor="let contact of categoriesModel">
+    <div>{{contact?.idCategory}}</div>
+    <div>{{contact?.strCategory}}</div>
+    <div>{{contact?.strCategoryThumb}}</div>
+    <div>{{contact?.strCategoryDescription}}</div>
+  </div>
+</div>
